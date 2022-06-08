@@ -7,15 +7,19 @@ class Cliente extends Persona {
     }
   
     get idCliente() {
-      return this.idCliente;
+      return this._idCliente;
     }
   
     get fechaRegistro() {
-      return this.fechaRegistro;
+      return this._fechaRegistro;
     }
   
     set fechaRegistro(fechaRegistro) {
-      return this.fechaRegistro;
+      this._fechaRegistro = fechaRegistro;
+    }
+
+    toString(){
+      return `${super.toString} ${this._idCliente} ${this._fechaRegistro}`;
     }
   }
   
