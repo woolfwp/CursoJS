@@ -43,4 +43,24 @@ class Orden {
     this._productos = [];
     this.contProAdd = 0;
   }
+
+  get idOrden() {
+    return this._idOrden;
+  }
+
+  addProd(producto) {
+    if (this._productos.length <= Orden.MAX_PROD) {
+      this._productos.push(producto);
+    } else {
+      console.log("supero la cantidad de prodcutos");
+    }
+  }
+
+  calTotal(){
+      let totalVenta = 0;
+      for(let producto of this._productos){
+          totalVenta += producto.precio;
+      }
+      return totalVenta;
+  }
 }
