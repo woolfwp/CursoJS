@@ -52,15 +52,26 @@ class Orden {
     if (this._productos.length <= Orden.MAX_PROD) {
       this._productos.push(producto);
     } else {
-      console.log("supero la cantidad de prodcutos");
+      console.log("supero la cantidad de productos");
     }
   }
 
-  calTotal(){
-      let totalVenta = 0;
-      for(let producto of this._productos){
-          totalVenta += producto.precio;
-      }
-      return totalVenta;
+  calTotal() {
+    let totalVenta = 0;
+    for (let producto of this._productos) {
+      totalVenta += producto.precio;
+    }
+    return totalVenta;
+  }
+
+  viwOrd() {
+    let prodOrden = "";
+    for (let producto of this._productos) {
+      prodOrden += producto.toString() + " ";
+    }
+
+    console.log(`Orden: ${this._idOrden} Total: ${this.calTotal()}, Productos: ${prodOrden}`);
   }
 }
+
+
